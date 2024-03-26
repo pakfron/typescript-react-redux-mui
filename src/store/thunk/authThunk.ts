@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { loginUser } from "../../api/authApi";
-import { AxiosError } from "axios";
 import axios from "../../configs/axios";
+import { ValidationError } from "yup";
+import { userLoginShema } from "../../utils/login-validator";
 type input = {
   username: string;
   password: string;
@@ -15,7 +16,7 @@ export const loginAction = createAsyncThunk(
       return response;
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        throw error.response?.data.message
+        throw error.response?.data.message;
       }
     }
   }

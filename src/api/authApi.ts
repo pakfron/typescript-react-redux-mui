@@ -10,13 +10,9 @@ type user = {
   email: string;
 };
 type data = {
-  acessToken: string;
+  accessToken: string;
   user: user;
 
-};
-
-type errorMessage = {
-  message: string;
 };
 
 export const loginUser = async (body: body) => {

@@ -1,5 +1,4 @@
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 type Props = {};
